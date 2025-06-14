@@ -6,7 +6,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Updated design system with new color palette */
+/* Updated design system with new color palette and theme support */
 
 @layer base {
   :root {
@@ -86,6 +86,15 @@
     --sidebar-accent-foreground: 0 0% 93%; /* White EEEEEE */
     --sidebar-border: 32 20% 19%; /* Brown 231F20 */
     --sidebar-ring: 283 45% 55%; /* P2 Purple 6E3482 */
+  }
+
+  /* Theme-specific classes */
+  .light {
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
   }
 }
 
@@ -412,6 +421,15 @@
     box-shadow: 0 10px 25px rgba(123, 91, 167, 0.3); /* Logo Purple shadow */
   }
 
+  .dark .apple-button {
+    background: linear-gradient(
+      135deg,
+      #a56abd 0%,
+      #7b5ba7 100%
+    ); /* P3 Purple to Logo Purple in dark */
+    box-shadow: 0 10px 25px rgba(165, 106, 189, 0.4); /* P3 Purple shadow in dark */
+  }
+
   .apple-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 15px 35px rgba(123, 91, 167, 0.4); /* Logo Purple shadow */
@@ -422,9 +440,22 @@
     ); /* P3 Purple to Logo Purple */
   }
 
+  .dark .apple-button:hover {
+    box-shadow: 0 15px 35px rgba(165, 106, 189, 0.5); /* P3 Purple shadow in dark */
+    background: linear-gradient(
+      135deg,
+      #d9bbf9 0%,
+      #a56abd 100%
+    ); /* Light Purple to P3 Purple in dark */
+  }
+
   .apple-button:active {
     transform: translateY(0);
     box-shadow: 0 5px 15px rgba(123, 91, 167, 0.3); /* Logo Purple shadow */
+  }
+
+  .dark .apple-button:active {
+    box-shadow: 0 5px 15px rgba(165, 106, 189, 0.4); /* P3 Purple shadow in dark */
   }
 
   /* Floating animation */

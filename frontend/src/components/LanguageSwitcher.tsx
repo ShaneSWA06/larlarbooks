@@ -135,42 +135,42 @@ const LanguageSwitcher = () => {
 
   return (
     <div className="relative" ref={dropdownRef}>
-      {/* Enhanced Language Switcher Button */}
+      {/* Enhanced Language Switcher Button with Dark Mode */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="language-switch-btn group flex items-center space-x-2 px-3 py-2 bg-white border border-gray-200 rounded-xl hover:border-purple-300 hover:bg-purple-50 hover:shadow-md transition-all duration-200 min-w-max focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-20"
+        className="language-switch-btn group flex items-center space-x-2 px-3 py-2 bg-[#EEEEEE] dark:bg-[#231F20] border border-[#D9BBF9] dark:border-[#6E3482] rounded-xl hover:border-[#7B5BA7] dark:hover:border-[#A56ABD] hover:bg-[#D9BBF9] dark:hover:bg-[#6E3482] hover:shadow-md transition-all duration-200 min-w-max focus:outline-none focus:ring-2 focus:ring-[#7B5BA7] focus:ring-opacity-20"
         aria-label="Switch language"
         aria-expanded={isOpen}
       >
-        <Globe className="h-4 w-4 text-gray-600 group-hover:text-purple-600 transition-colors" />
+        <Globe className="h-4 w-4 text-[#1A1A1A] dark:text-[#EEEEEE] group-hover:text-[#7B5BA7] dark:group-hover:text-[#A56ABD] transition-colors" />
         <div className="flex items-center space-x-2">
           <div className="flex-shrink-0">{currentLanguage.flagComponent}</div>
-          <span className="text-sm font-medium text-gray-700 group-hover:text-purple-700 transition-colors">
+          <span className="text-sm font-medium text-[#1A1A1A] dark:text-[#EEEEEE] group-hover:text-[#7B5BA7] dark:group-hover:text-[#A56ABD] transition-colors">
             {currentLanguage.code}
           </span>
         </div>
         <ChevronDown
-          className={`h-4 w-4 text-gray-500 group-hover:text-purple-500 transition-all duration-200 ${
+          className={`h-4 w-4 text-[#1A1A1A] dark:text-[#EEEEEE] group-hover:text-[#7B5BA7] dark:group-hover:text-[#A56ABD] transition-all duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
         />
       </button>
 
-      {/* Enhanced Dropdown Menu */}
+      {/* Enhanced Dropdown Menu with Dark Mode */}
       {isOpen && (
-        <div className="language-dropdown absolute top-full right-0 mt-2 w-52 bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden backdrop-blur-sm">
+        <div className="language-dropdown absolute top-full right-0 mt-2 w-52 bg-[#EEEEEE] dark:bg-[#231F20] border border-[#D9BBF9] dark:border-[#6E3482] rounded-xl shadow-xl z-50 overflow-hidden backdrop-blur-sm">
           <div className="py-1">
-            <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wide border-b border-gray-100 bg-gray-50">
+            <div className="px-4 py-2 text-xs font-semibold text-[#1A1A1A]/60 dark:text-[#EEEEEE]/60 uppercase tracking-wide border-b border-[#D9BBF9] dark:border-[#6E3482] bg-[#D9BBF9]/50 dark:bg-[#6E3482]/20">
               Choose Language
             </div>
             {languageOptions.map((option) => (
               <button
                 key={option.code}
                 onClick={() => handleLanguageChange(option.code)}
-                className={`language-option w-full flex items-center justify-between px-4 py-3 hover:bg-purple-50 transition-all duration-150 group ${
+                className={`language-option w-full flex items-center justify-between px-4 py-3 hover:bg-[#D9BBF9] dark:hover:bg-[#6E3482] transition-all duration-150 group ${
                   language === option.code
-                    ? "bg-purple-50 text-purple-700 border-r-4 border-purple-500"
-                    : "text-gray-700 hover:text-purple-600"
+                    ? "bg-[#D9BBF9] dark:bg-[#6E3482] text-[#7B5BA7] dark:text-[#EEEEEE] border-r-4 border-[#7B5BA7] dark:border-[#A56ABD]"
+                    : "text-[#1A1A1A] dark:text-[#EEEEEE] hover:text-[#7B5BA7] dark:hover:text-[#A56ABD]"
                 }`}
               >
                 <div className="flex items-center space-x-3">
@@ -179,13 +179,13 @@ const LanguageSwitcher = () => {
                     <span className="font-medium text-sm leading-tight">
                       {option.label}
                     </span>
-                    <span className="text-xs text-gray-500 group-hover:text-purple-500">
+                    <span className="text-xs text-[#1A1A1A]/50 dark:text-[#EEEEEE]/50 group-hover:text-[#7B5BA7]/70 dark:group-hover:text-[#A56ABD]/70">
                       {option.nativeName}
                     </span>
                   </div>
                 </div>
                 {language === option.code && (
-                  <Check className="h-4 w-4 text-purple-600 flex-shrink-0" />
+                  <Check className="h-4 w-4 text-[#7B5BA7] dark:text-[#A56ABD] flex-shrink-0" />
                 )}
               </button>
             ))}

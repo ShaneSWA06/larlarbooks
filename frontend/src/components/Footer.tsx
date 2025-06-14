@@ -4,7 +4,7 @@ import {
   Phone,
   MapPin,
   Facebook,
-  Twitter,
+  Linkedin,
   Instagram,
   Youtube,
 } from "lucide-react";
@@ -41,9 +41,8 @@ const Footer = () => {
 
       // Contact Info
       contactInfoTitle: "Contact Info",
-      email: "info@larlarbooks.com",
-      phone: "+95 (9) 123-456-789",
-      address: "123 Education St, Yangon, Myanmar",
+      email: "contact-us@larlarbooks.com",
+      phone: "+65 ",
 
       // Copyright
       copyright:
@@ -74,9 +73,8 @@ const Footer = () => {
 
       // Contact Info
       contactInfoTitle: "ဆက်သွယ်ရေးအချက်အလက်",
-      email: "info@larlarbooks.com",
+      email: "contact-us@larlarbooks.com",
       phone: "+95 (9) 123-456-789",
-      address: "123 ပညာရေးလမ်း၊ ရန်ကုန်မြို့၊ မြန်မာနိုင်ငံ",
 
       // Copyright
       copyright:
@@ -130,21 +128,21 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/larlarbooks"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/larlar-books/"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
-                aria-label="Twitter"
+                aria-label="Linkedin"
               >
-                <Twitter className="h-5 w-5" />
+                <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/larlarbooks/"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
                 aria-label="Instagram"
               >
@@ -314,16 +312,6 @@ const Footer = () => {
                   }`}
                 >
                   {ft.phone}
-                </span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-purple-400 flex-shrink-0 mt-0.5" />
-                <span
-                  className={`text-gray-300 ${
-                    language === "MM" ? "myanmar-text text-sm" : ""
-                  }`}
-                >
-                  {ft.address}
                 </span>
               </div>
             </div>
