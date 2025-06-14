@@ -20,24 +20,24 @@ const Hero = () => {
   };
 
   return (
-    <section className="bg-gradient-to-br from-purple-900 via-violet-900 to-indigo-900 py-20 relative overflow-hidden">
+    <section className="bg-gradient-to-br from-[#7B5BA7] via-[#6E3482] to-[#A56ABD] pt-32 pb-20 relative overflow-hidden">
       {/* Floating background elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-purple-500/20 rounded-full blur-xl floating" />
+      <div className="absolute top-20 left-10 w-20 h-20 bg-[#A56ABD]/20 rounded-full blur-xl floating" />
       <div
-        className="absolute top-40 right-20 w-32 h-32 bg-violet-500/20 rounded-full blur-xl floating"
+        className="absolute top-40 right-20 w-32 h-32 bg-[#D9BBF9]/20 rounded-full blur-xl floating"
         style={{ animationDelay: "1s" }}
       />
       <div
-        className="absolute bottom-40 left-1/4 w-16 h-16 bg-indigo-500/20 rounded-full blur-xl floating"
+        className="absolute bottom-40 left-1/4 w-16 h-16 bg-[#6E3482]/20 rounded-full blur-xl floating"
         style={{ animationDelay: "2s" }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[90%] 2xl:max-w-[85%]">
         {/* Main Content */}
-        <div className="text-center space-y-12 text-white">
+        <div className="text-center space-y-12 text-[#EEEEEE]">
           {/* Logo showcase */}
           <div className="flex justify-center mb-8">
-            <div className="p-6 bg-white/10 backdrop-blur-lg rounded-full border border-white/20 floating">
+            <div className="p-6 bg-[#EEEEEE] backdrop-blur-lg rounded-full border border-[#7B5BA7]/30 shadow-lg floating">
               <img
                 src="/logo.png"
                 alt="LarLarBooks Logo"
@@ -47,7 +47,7 @@ const Hero = () => {
                 }}
               />
               <BookOpen
-                className="h-16 w-16 text-purple-300 hidden"
+                className="h-16 w-16 text-[#A56ABD] hidden"
                 style={{ display: "none" }}
               />
             </div>
@@ -55,7 +55,7 @@ const Hero = () => {
 
           {/* Main Headline */}
           <h1
-            className={`hero-title font-bold text-white leading-tight ${
+            className={`hero-title font-bold text-[#EEEEEE] leading-tight ${
               language === "MM"
                 ? "text-4xl lg:text-6xl myanmar-heading"
                 : "text-5xl lg:text-7xl"
@@ -66,7 +66,7 @@ const Hero = () => {
 
           {/* Subtitle */}
           <p
-            className={`hero-subtitle text-purple-100 max-w-4xl mx-auto leading-relaxed ${
+            className={`hero-subtitle text-[#D9BBF9] max-w-4xl mx-auto leading-relaxed ${
               language === "MM"
                 ? "text-lg lg:text-xl myanmar-text"
                 : "text-xl lg:text-2xl"
@@ -102,7 +102,7 @@ const Hero = () => {
         <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
           <div className="space-y-4 group">
             <div className="flex items-center justify-center">
-              <div className="p-3 bg-white/10 backdrop-blur-lg rounded-full mr-4 group-hover:scale-110 transition-transform">
+              <div className="p-3 bg-[#EEEEEE]/10 backdrop-blur-lg rounded-full mr-4 group-hover:scale-110 transition-transform">
                 <img
                   src="/logo.png"
                   alt="Books"
@@ -112,14 +112,14 @@ const Hero = () => {
                   }}
                 />
                 <BookOpen
-                  className="h-8 w-8 text-purple-300 hidden"
+                  className="h-8 w-8 text-[#A56ABD] hidden"
                   style={{ display: "none" }}
                 />
               </div>
-              <span className="text-4xl font-bold text-white">10K+</span>
+              <span className="text-4xl font-bold text-[#EEEEEE]">10K+</span>
             </div>
             <p
-              className={`stats-text text-purple-200 font-medium ${
+              className={`stats-text text-[#D9BBF9] font-medium ${
                 language === "MM" ? "myanmar-text" : ""
               }`}
             >
@@ -129,13 +129,13 @@ const Hero = () => {
 
           <div className="space-y-4 group">
             <div className="flex items-center justify-center">
-              <div className="p-3 bg-white/10 backdrop-blur-lg rounded-full mr-4 group-hover:scale-110 transition-transform">
-                <Users className="h-8 w-8 text-purple-300" />
+              <div className="p-3 bg-[#EEEEEE]/10 backdrop-blur-lg rounded-full mr-4 group-hover:scale-110 transition-transform">
+                <Users className="h-8 w-8 text-[#A56ABD]" />
               </div>
-              <span className="text-4xl font-bold text-white">50K+</span>
+              <span className="text-4xl font-bold text-[#EEEEEE]">50K+</span>
             </div>
             <p
-              className={`stats-text text-purple-200 font-medium ${
+              className={`stats-text text-[#D9BBF9] font-medium ${
                 language === "MM" ? "myanmar-text" : ""
               }`}
             >
@@ -145,13 +145,13 @@ const Hero = () => {
 
           <div className="space-y-4 group">
             <div className="flex items-center justify-center">
-              <div className="p-3 bg-white/10 backdrop-blur-lg rounded-full mr-4 group-hover:scale-110 transition-transform">
-                <Award className="h-8 w-8 text-purple-300" />
+              <div className="p-3 bg-[#EEEEEE]/10 backdrop-blur-lg rounded-full mr-4 group-hover:scale-110 transition-transform">
+                <Award className="h-8 w-8 text-[#A56ABD]" />
               </div>
-              <span className="text-4xl font-bold text-white">4.8★</span>
+              <span className="text-4xl font-bold text-[#EEEEEE]">4.8★</span>
             </div>
             <p
-              className={`stats-text text-purple-200 font-medium ${
+              className={`stats-text text-[#D9BBF9] font-medium ${
                 language === "MM" ? "myanmar-text" : ""
               }`}
             >
@@ -163,7 +163,7 @@ const Hero = () => {
         {/* Trusted By Section */}
         <div className="mt-16 text-center">
           <p
-            className={`text-purple-300 font-medium text-sm uppercase tracking-wider mb-8 ${
+            className={`text-[#eeeeee] font-medium text-sm uppercase tracking-wider mb-8 ${
               language === "MM" ? "myanmar-text" : ""
             }`}
           >
@@ -176,10 +176,10 @@ const Hero = () => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
         <button
           onClick={scrollToBooks}
-          className="animate-bounce bg-white/10 backdrop-blur-lg rounded-full p-4 hover:bg-white/20 transition-all focus:outline-none border border-white/20"
+          className="animate-bounce bg-[#EEEEEE]/10 backdrop-blur-lg rounded-full p-4 hover:bg-[#EEEEEE]/20 transition-all focus:outline-none border border-[#EEEEEE]/20"
           aria-label="Scroll to books section"
         >
-          <ChevronDown className="h-6 w-6 text-purple-300" />
+          <ChevronDown className="h-6 w-6 text-[#EEEEEE]" />
         </button>
       </div>
 

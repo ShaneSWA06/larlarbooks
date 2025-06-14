@@ -320,7 +320,7 @@ const translations: Record<Language, Translations> = {
     authorName: "ဒေါက်တာ စာရာ ဂျွန်ဆင်",
 
     // About Page - Hero
-    aboutHeroTitle: "LarLarBooks အကြောင်း",
+    aboutHeroTitle: "လာလာစာပေ အကြောင်း",
     aboutHeroSubtitle:
       "ကျွန်ုပ်တို့သည် သင်ယူသူများနှင့်အတူ ကြီးထွားနေသော သက်ရှိပညာတိုက်ကို တည်ဆောက်နေပါသည်။ ရိုးရိုး စာအုပ်စုစည်းမှုတစ်ခုမျှ မဟုတ်ပါ။",
 

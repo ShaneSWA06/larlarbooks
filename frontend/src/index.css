@@ -1,94 +1,91 @@
+/* Import the new fonts */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+/* Updated design system with new color palette */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 93%; /* White EEEEEE */
+    --foreground: 7 10% 13%; /* Black 1A1A1A */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 93%; /* White EEEEEE */
+    --card-foreground: 7 10% 13%; /* Black 1A1A1A */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 93%; /* White EEEEEE */
+    --popover-foreground: 7 10% 13%; /* Black 1A1A1A */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 263 60% 45%; /* Logo Purple 7B5BA7 */
+    --primary-foreground: 0 0% 93%; /* White EEEEEE */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 288 35% 75%; /* P3 Purple A56ABD */
+    --secondary-foreground: 7 10% 13%; /* Black 1A1A1A */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 300 25% 85%; /* Light Purple D9BBF9 */
+    --muted-foreground: 7 10% 13%; /* Black 1A1A1A */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 283 45% 55%; /* P2 Purple 6E3482 */
+    --accent-foreground: 0 0% 93%; /* White EEEEEE */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%; /* Error Red E3170A */
+    --destructive-foreground: 0 0% 93%; /* White EEEEEE */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 300 25% 85%; /* Light Purple D9BBF9 */
+    --input: 300 25% 85%; /* Light Purple D9BBF9 */
+    --ring: 263 60% 45%; /* Logo Purple 7B5BA7 */
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 93%; /* White EEEEEE */
+    --sidebar-foreground: 7 10% 13%; /* Black 1A1A1A */
+    --sidebar-primary: 263 60% 45%; /* Logo Purple 7B5BA7 */
+    --sidebar-primary-foreground: 0 0% 93%; /* White EEEEEE */
+    --sidebar-accent: 300 25% 85%; /* Light Purple D9BBF9 */
+    --sidebar-accent-foreground: 7 10% 13%; /* Black 1A1A1A */
+    --sidebar-border: 300 25% 85%; /* Light Purple D9BBF9 */
+    --sidebar-ring: 263 60% 45%; /* Logo Purple 7B5BA7 */
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 7 10% 13%; /* Black 1A1A1A */
+    --foreground: 0 0% 93%; /* White EEEEEE */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 7 10% 13%; /* Black 1A1A1A */
+    --card-foreground: 0 0% 93%; /* White EEEEEE */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 7 10% 13%; /* Black 1A1A1A */
+    --popover-foreground: 0 0% 93%; /* White EEEEEE */
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 283 45% 55%; /* P2 Purple 6E3482 */
+    --primary-foreground: 0 0% 93%; /* White EEEEEE */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 32 20% 19%; /* Brown 231F20 */
+    --secondary-foreground: 0 0% 93%; /* White EEEEEE */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 32 20% 19%; /* Brown 231F20 */
+    --muted-foreground: 288 35% 75%; /* P3 Purple A56ABD */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 283 45% 55%; /* P2 Purple 6E3482 */
+    --accent-foreground: 0 0% 93%; /* White EEEEEE */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%; /* Error Red E3170A */
+    --destructive-foreground: 0 0% 93%; /* White EEEEEE */
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 32 20% 19%; /* Brown 231F20 */
+    --input: 32 20% 19%; /* Brown 231F20 */
+    --ring: 283 45% 55%; /* P2 Purple 6E3482 */
+    --sidebar-background: 7 10% 13%; /* Black 1A1A1A */
+    --sidebar-foreground: 0 0% 93%; /* White EEEEEE */
+    --sidebar-primary: 283 45% 55%; /* P2 Purple 6E3482 */
+    --sidebar-primary-foreground: 0 0% 93%; /* White EEEEEE */
+    --sidebar-accent: 32 20% 19%; /* Brown 231F20 */
+    --sidebar-accent-foreground: 0 0% 93%; /* White EEEEEE */
+    --sidebar-border: 32 20% 19%; /* Brown 231F20 */
+    --sidebar-ring: 283 45% 55%; /* P2 Purple 6E3482 */
   }
 }
 
@@ -114,8 +111,8 @@
     right: 0;
     z-index: 100;
     backdrop-filter: blur(16px);
-    background: rgba(255, 255, 255, 0.8);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(238, 238, 238, 0.8); /* Updated to use White EEEEEE */
+    border-bottom: 1px solid rgba(26, 26, 26, 0.1); /* Updated to use Black 1A1A1A */
   }
 
   /* Add padding to body to account for fixed header */
@@ -130,31 +127,31 @@
     z-index: 1;
   }
 
-  /* Myanmar Typography Fonts */
+  /* Updated Typography Fonts */
   .myanmar-heading {
-    font-family: "Myanmar Khyay", "Pyidaungsu Font", "Myanmar3", "Padauk",
-      "Myanmar Text", sans-serif;
+    font-family: "Noto Sans Myanmar", "Myanmar Khyay", "Pyidaungsu Font",
+      "Myanmar3", "Padauk", "Myanmar Text", sans-serif;
     line-height: 1.4;
     font-weight: 600;
     letter-spacing: 0.02em;
   }
 
   .myanmar-text {
-    font-family: "Myanmar Khyay", "Pyidaungsu Font", "Myanmar3", "Padauk",
-      "Myanmar Text", sans-serif;
+    font-family: "Noto Sans Myanmar", "Myanmar Khyay", "Pyidaungsu Font",
+      "Myanmar3", "Padauk", "Myanmar Text", sans-serif;
     line-height: 1.6;
     letter-spacing: 0.01em;
   }
 
   /* Language-specific global styles */
   html.myanmar {
-    font-family: "Myanmar Khyay", "Pyidaungsu Font", "Myanmar3", "Padauk",
-      "Myanmar Text", sans-serif;
+    font-family: "Noto Sans Myanmar", "Myanmar Khyay", "Pyidaungsu Font",
+      "Myanmar3", "Padauk", "Myanmar Text", sans-serif;
   }
 
   html.english {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-      "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
   }
 
   /* Navigation Text Styling */
@@ -167,8 +164,8 @@
 
   /* Myanmar Navigation Specific */
   html.myanmar .navbar-text {
-    font-family: "Myanmar Khyay", "Pyidaungsu Font", "Myanmar3", "Padauk",
-      "Myanmar Text", sans-serif;
+    font-family: "Noto Sans Myanmar", "Myanmar Khyay", "Pyidaungsu Font",
+      "Myanmar3", "Padauk", "Myanmar Text", sans-serif;
     font-weight: 500;
     letter-spacing: 0.02em;
   }
@@ -176,13 +173,13 @@
   /* Bold Myanmar Navigation for Active State */
   html.myanmar .navbar-text.font-bold {
     font-weight: 700 !important;
-    text-shadow: 0 0 1px rgba(59, 130, 246, 0.3);
+    text-shadow: 0 0 1px rgba(123, 91, 167, 0.3); /* Updated to Logo Purple */
   }
 
   /* Myanmar Button Text */
   html.myanmar .btn-text {
-    font-family: "Myanmar Khyay", "Pyidaungsu Font", "Myanmar3", "Padauk",
-      "Myanmar Text", sans-serif;
+    font-family: "Noto Sans Myanmar", "Myanmar Khyay", "Pyidaungsu Font",
+      "Myanmar3", "Padauk", "Myanmar Text", sans-serif;
     font-weight: 500;
     letter-spacing: 0.01em;
   }
@@ -197,20 +194,20 @@
 
   /* Search Container Myanmar */
   html.myanmar .search-container input::placeholder {
-    font-family: "Myanmar Khyay", "Pyidaungsu Font", "Myanmar3", "Padauk",
-      "Myanmar Text", sans-serif;
+    font-family: "Noto Sans Myanmar", "Myanmar Khyay", "Pyidaungsu Font",
+      "Myanmar3", "Padauk", "Myanmar Text", sans-serif;
     opacity: 0.7;
   }
 
   /* Language Switcher Myanmar */
   html.myanmar .language-switch-btn {
-    font-family: "Myanmar Khyay", "Pyidaungsu Font", "Myanmar3", "Padauk",
-      "Myanmar Text", sans-serif;
+    font-family: "Noto Sans Myanmar", "Myanmar Khyay", "Pyidaungsu Font",
+      "Myanmar3", "Padauk", "Myanmar Text", sans-serif;
   }
 
   html.myanmar .language-dropdown .language-option {
-    font-family: "Myanmar Khyay", "Pyidaungsu Font", "Myanmar3", "Padauk",
-      "Myanmar Text", sans-serif;
+    font-family: "Noto Sans Myanmar", "Myanmar Khyay", "Pyidaungsu Font",
+      "Myanmar3", "Padauk", "Myanmar Text", sans-serif;
   }
 
   /* Enhanced text rendering for Myanmar */
@@ -277,18 +274,18 @@
 }
 
 @layer components {
-  /* Active Navigation Indicator */
+  /* Active Navigation Indicator - Updated colors */
   .nav-active {
-    @apply text-blue-700 bg-blue-50 font-bold;
+    @apply text-[#7B5BA7] bg-[#D9BBF9] font-bold; /* Logo Purple text, Light Purple bg */
   }
 
   .nav-inactive {
-    @apply text-gray-700 font-medium;
+    @apply text-[#1A1A1A] font-medium; /* Black text */
   }
 
   /* Myanmar-specific component styles */
   .myanmar-card {
-    @apply rounded-xl shadow-lg bg-white p-6;
+    @apply rounded-xl shadow-lg bg-[#EEEEEE] p-6; /* White background */
   }
 
   .myanmar-button {
@@ -340,25 +337,25 @@
     transform: scale(1);
   }
 
-  /* Brand-themed card with scroll animation */
+  /* Brand-themed card with scroll animation - Updated colors */
   .apple-card {
-    @apply bg-white rounded-3xl shadow-xl p-8 lg:p-12;
+    @apply bg-[#EEEEEE] rounded-3xl shadow-xl p-8 lg:p-12; /* White background */
     backdrop-filter: blur(20px);
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid rgba(122, 90, 163, 0.2);
+    background: rgba(238, 238, 238, 0.85); /* White with transparency */
+    border: 1px solid rgba(123, 91, 167, 0.2); /* Logo Purple border */
     transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
   .apple-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 25px 60px rgba(122, 90, 163, 0.25);
+    box-shadow: 0 25px 60px rgba(123, 91, 167, 0.25); /* Logo Purple shadow */
   }
 
-  /* Glass morphism effect with brand color */
+  /* Glass morphism effect with brand color - Updated */
   .glass-card {
     backdrop-filter: blur(20px);
-    background: rgba(122, 90, 163, 0.1);
-    border: 1px solid rgba(122, 90, 163, 0.2);
+    background: rgba(123, 91, 167, 0.1); /* Logo Purple with transparency */
+    border: 1px solid rgba(123, 91, 167, 0.2); /* Logo Purple border */
     border-radius: 20px;
   }
 
@@ -400,26 +397,34 @@
     animation-delay: 0.6s;
   }
 
-  /* Brand-themed button */
+  /* Brand-themed button - Updated colors */
   .apple-button {
     @apply inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-full;
-    background: linear-gradient(135deg, #7a5aa3 0%, #9c7cc7 100%);
-    color: white;
+    background: linear-gradient(
+      135deg,
+      #7b5ba7 0%,
+      #6e3482 100%
+    ); /* Logo Purple to P2 Purple */
+    color: #eeeeee; /* White text */
     border: none;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-    box-shadow: 0 10px 25px rgba(122, 90, 163, 0.3);
+    box-shadow: 0 10px 25px rgba(123, 91, 167, 0.3); /* Logo Purple shadow */
   }
 
   .apple-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 35px rgba(122, 90, 163, 0.4);
-    background: linear-gradient(135deg, #8a6ab3 0%, #ac8cd7 100%);
+    box-shadow: 0 15px 35px rgba(123, 91, 167, 0.4); /* Logo Purple shadow */
+    background: linear-gradient(
+      135deg,
+      #a56abd 0%,
+      #7b5ba7 100%
+    ); /* P3 Purple to Logo Purple */
   }
 
   .apple-button:active {
     transform: translateY(0);
-    box-shadow: 0 5px 15px rgba(122, 90, 163, 0.3);
+    box-shadow: 0 5px 15px rgba(123, 91, 167, 0.3); /* Logo Purple shadow */
   }
 
   /* Floating animation */
@@ -437,7 +442,7 @@
     }
   }
 
-  /* Pulse animation with brand color */
+  /* Pulse animation with brand color - Updated */
   .pulse-slow {
     animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
@@ -452,22 +457,26 @@
     }
   }
 
-  /* Brand gradient text */
+  /* Brand gradient text - Updated */
   .gradient-text {
-    background: linear-gradient(135deg, #7a5aa3 0%, #9c7cc7 100%);
+    background: linear-gradient(
+      135deg,
+      #7b5ba7 0%,
+      #6e3482 100%
+    ); /* Logo Purple to P2 Purple */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Brand-themed section divider */
+  /* Brand-themed section divider - Updated */
   .section-divider {
     height: 1px;
     background: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(122, 90, 163, 0.3) 50%,
-      transparent 100%
+      rgba(123, 91, 167, 0.3) 50%,
+      /* Logo Purple */ transparent 100%
     );
     margin: 4rem 0;
   }
@@ -489,7 +498,7 @@
 
   /* Text shadow for better Myanmar readability */
   .text-shadow-myanmar {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 1px 2px rgba(26, 26, 26, 0.1); /* Updated to Black */
   }
 
   /* Apple-style utilities */
@@ -514,21 +523,29 @@
     scroll-behavior: smooth;
   }
 
-  /* Custom gradients with brand color */
+  /* Custom gradients with brand color - Updated */
   .bg-gradient-brand {
-    background: linear-gradient(135deg, #7a5aa3 0%, #9c7cc7 100%);
+    background: linear-gradient(
+      135deg,
+      #7b5ba7 0%,
+      #6e3482 100%
+    ); /* Logo Purple to P2 Purple */
   }
 
   .bg-gradient-brand-light {
     background: linear-gradient(
       135deg,
-      rgba(122, 90, 163, 0.1) 0%,
-      rgba(156, 124, 199, 0.1) 100%
+      rgba(123, 91, 167, 0.1) 0%,
+      /* Logo Purple */ rgba(165, 106, 189, 0.1) 100% /* P3 Purple */
     );
   }
 
   .bg-gradient-brand-dark {
-    background: linear-gradient(135deg, #6a4a93 0%, #8c6cb7 100%);
+    background: linear-gradient(
+      135deg,
+      #6e3482 0%,
+      #7b5ba7 100%
+    ); /* P2 Purple to Logo Purple */
   }
 
   /* Interactive hover effects */
@@ -540,37 +557,94 @@
     transform: translateY(-4px);
   }
 
-  /* Brand-themed focus states */
+  /* Brand-themed focus states - Updated */
   .focus-brand {
-    @apply focus:outline-none focus:ring-4 focus:ring-purple-500/20 focus:ring-offset-2;
+    @apply focus:outline-none focus:ring-4 focus:ring-[#7B5BA7]/20 focus:ring-offset-2; /* Logo Purple */
   }
 
-  /* Brand color variations */
+  /* Brand color variations - Updated with hex values */
   .text-brand {
-    color: #7a5aa3;
+    color: #7b5ba7; /* Logo Purple */
   }
 
   .text-brand-light {
-    color: #9c7cc7;
+    color: #a56abd; /* P3 Purple */
   }
 
   .text-brand-dark {
-    color: #6a4a93;
+    color: #6e3482; /* P2 Purple */
   }
 
   .bg-brand {
-    background-color: #7a5aa3;
+    background-color: #7b5ba7; /* Logo Purple */
   }
 
   .bg-brand-light {
-    background-color: #9c7cc7;
+    background-color: #a56abd; /* P3 Purple */
   }
 
   .bg-brand-dark {
-    background-color: #6a4a93;
+    background-color: #6e3482; /* P2 Purple */
   }
 
   .border-brand {
-    border-color: #7a5aa3;
+    border-color: #7b5ba7; /* Logo Purple */
+  }
+
+  /* Additional color utilities from your palette */
+  .text-light-purple {
+    color: #d9bbf9; /* Light Purple */
+  }
+
+  .text-lm-white {
+    color: #e5e2f4; /* LM White */
+  }
+
+  .text-white {
+    color: #eeeeee; /* White */
+  }
+
+  .text-brown {
+    color: #231f20; /* Brown */
+  }
+
+  .text-black {
+    color: #1a1a1a; /* Black */
+  }
+
+  .text-error {
+    color: #e3170a; /* Error Red */
+  }
+
+  .text-success {
+    color: #baff29; /* Approve Green */
+  }
+
+  .bg-light-purple {
+    background-color: #d9bbf9; /* Light Purple */
+  }
+
+  .bg-lm-white {
+    background-color: #e5e2f4; /* LM White */
+  }
+
+  .bg-white {
+    background-color: #eeeeee; /* White */
+  }
+
+  .bg-brown {
+    background-color: #231f20; /* Brown */
+  }
+
+  .bg-black {
+    background-color: #1a1a1a; /* Black */
+  }
+
+  .bg-error {
+    background-color: #e3170a; /* Error Red */
+  }
+
+  .bg-success {
+    background-color: #baff29; /* Approve Green */
   }
 }
