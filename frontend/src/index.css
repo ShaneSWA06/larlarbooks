@@ -100,4 +100,477 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Smooth scrolling for the entire page */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Ensure fixed header always stays on top */
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  /* Add padding to body to account for fixed header */
+  body {
+    position: relative;
+    padding-top: 0;
+  }
+
+  /* Ensure content doesn't hide behind fixed header */
+  main {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Myanmar Typography Fonts */
+  .myanmar-heading {
+    font-family: "Myanmar Khyay", "Pyidaungsu Font", "Myanmar3", "Padauk",
+      "Myanmar Text", sans-serif;
+    line-height: 1.4;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .myanmar-text {
+    font-family: "Myanmar Khyay", "Pyidaungsu Font", "Myanmar3", "Padauk",
+      "Myanmar Text", sans-serif;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+
+  /* Language-specific global styles */
+  html.myanmar {
+    font-family: "Myanmar Khyay", "Pyidaungsu Font", "Myanmar3", "Padauk",
+      "Myanmar Text", sans-serif;
+  }
+
+  html.english {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+  }
+
+  /* Navigation Text Styling */
+  .navbar-text {
+    transition: all 0.3s ease;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Myanmar Navigation Specific */
+  html.myanmar .navbar-text {
+    font-family: "Myanmar Khyay", "Pyidaungsu Font", "Myanmar3", "Padauk",
+      "Myanmar Text", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  /* Bold Myanmar Navigation for Active State */
+  html.myanmar .navbar-text.font-bold {
+    font-weight: 700 !important;
+    text-shadow: 0 0 1px rgba(59, 130, 246, 0.3);
+  }
+
+  /* Myanmar Button Text */
+  html.myanmar .btn-text {
+    font-family: "Myanmar Khyay", "Pyidaungsu Font", "Myanmar3", "Padauk",
+      "Myanmar Text", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  html.myanmar .myanmar-signin {
+    font-weight: 500;
+  }
+
+  html.myanmar .myanmar-getstarted {
+    font-weight: 600;
+  }
+
+  /* Search Container Myanmar */
+  html.myanmar .search-container input::placeholder {
+    font-family: "Myanmar Khyay", "Pyidaungsu Font", "Myanmar3", "Padauk",
+      "Myanmar Text", sans-serif;
+    opacity: 0.7;
+  }
+
+  /* Language Switcher Myanmar */
+  html.myanmar .language-switch-btn {
+    font-family: "Myanmar Khyay", "Pyidaungsu Font", "Myanmar3", "Padauk",
+      "Myanmar Text", sans-serif;
+  }
+
+  html.myanmar .language-dropdown .language-option {
+    font-family: "Myanmar Khyay", "Pyidaungsu Font", "Myanmar3", "Padauk",
+      "Myanmar Text", sans-serif;
+  }
+
+  /* Enhanced text rendering for Myanmar */
+  html.myanmar * {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Better spacing for Myanmar text */
+  html.myanmar .space-x-1 > * + * {
+    margin-left: 0.35rem;
+  }
+
+  html.myanmar .space-x-2 > * + * {
+    margin-left: 0.6rem;
+  }
+
+  html.myanmar .space-x-3 > * + * {
+    margin-left: 0.9rem;
+  }
+
+  /* Myanmar responsive text sizing */
+  html.myanmar .text-sm {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  html.myanmar .text-base {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  html.myanmar .text-lg {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+
+  html.myanmar .text-xl {
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+
+  html.myanmar .text-2xl {
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+
+  /* Additional Myanmar-specific improvements */
+  html.myanmar .truncate {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  /* Fix for Myanmar text in flex containers */
+  html.myanmar .flex-shrink-0 {
+    flex-shrink: 0;
+  }
+
+  html.myanmar .min-w-0 {
+    min-width: 0;
+  }
+}
+
+@layer components {
+  /* Active Navigation Indicator */
+  .nav-active {
+    @apply text-blue-700 bg-blue-50 font-bold;
+  }
+
+  .nav-inactive {
+    @apply text-gray-700 font-medium;
+  }
+
+  /* Myanmar-specific component styles */
+  .myanmar-card {
+    @apply rounded-xl shadow-lg bg-white p-6;
+  }
+
+  .myanmar-button {
+    @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300;
+  }
+
+  /* Apple-style scroll animations */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .scroll-reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .scroll-reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .scroll-reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .scroll-reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .scroll-reveal-scale {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .scroll-reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Brand-themed card with scroll animation */
+  .apple-card {
+    @apply bg-white rounded-3xl shadow-xl p-8 lg:p-12;
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(122, 90, 163, 0.2);
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .apple-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(122, 90, 163, 0.25);
+  }
+
+  /* Glass morphism effect with brand color */
+  .glass-card {
+    backdrop-filter: blur(20px);
+    background: rgba(122, 90, 163, 0.1);
+    border: 1px solid rgba(122, 90, 163, 0.2);
+    border-radius: 20px;
+  }
+
+  /* Parallax sections */
+  .parallax-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .parallax-bg {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    will-change: transform;
+  }
+
+  /* Staggered animations */
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+  .stagger-5 {
+    animation-delay: 0.5s;
+  }
+  .stagger-6 {
+    animation-delay: 0.6s;
+  }
+
+  /* Brand-themed button */
+  .apple-button {
+    @apply inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-full;
+    background: linear-gradient(135deg, #7a5aa3 0%, #9c7cc7 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    box-shadow: 0 10px 25px rgba(122, 90, 163, 0.3);
+  }
+
+  .apple-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(122, 90, 163, 0.4);
+    background: linear-gradient(135deg, #8a6ab3 0%, #ac8cd7 100%);
+  }
+
+  .apple-button:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(122, 90, 163, 0.3);
+  }
+
+  /* Floating animation */
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+
+  @keyframes floating {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Pulse animation with brand color */
+  .pulse-slow {
+    animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  /* Brand gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #7a5aa3 0%, #9c7cc7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Brand-themed section divider */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(122, 90, 163, 0.3) 50%,
+      transparent 100%
+    );
+    margin: 4rem 0;
+  }
+}
+
+@layer utilities {
+  /* Myanmar text utilities */
+  .myanmar-bold {
+    font-weight: 700 !important;
+  }
+
+  .myanmar-medium {
+    font-weight: 500 !important;
+  }
+
+  .myanmar-normal {
+    font-weight: 400 !important;
+  }
+
+  /* Text shadow for better Myanmar readability */
+  .text-shadow-myanmar {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Apple-style utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  /* Scroll-based animations */
+  .scroll-mt-20 {
+    scroll-margin-top: 5rem;
+  }
+
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom gradients with brand color */
+  .bg-gradient-brand {
+    background: linear-gradient(135deg, #7a5aa3 0%, #9c7cc7 100%);
+  }
+
+  .bg-gradient-brand-light {
+    background: linear-gradient(
+      135deg,
+      rgba(122, 90, 163, 0.1) 0%,
+      rgba(156, 124, 199, 0.1) 100%
+    );
+  }
+
+  .bg-gradient-brand-dark {
+    background: linear-gradient(135deg, #6a4a93 0%, #8c6cb7 100%);
+  }
+
+  /* Interactive hover effects */
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Brand-themed focus states */
+  .focus-brand {
+    @apply focus:outline-none focus:ring-4 focus:ring-purple-500/20 focus:ring-offset-2;
+  }
+
+  /* Brand color variations */
+  .text-brand {
+    color: #7a5aa3;
+  }
+
+  .text-brand-light {
+    color: #9c7cc7;
+  }
+
+  .text-brand-dark {
+    color: #6a4a93;
+  }
+
+  .bg-brand {
+    background-color: #7a5aa3;
+  }
+
+  .bg-brand-light {
+    background-color: #9c7cc7;
+  }
+
+  .bg-brand-dark {
+    background-color: #6a4a93;
+  }
+
+  .border-brand {
+    border-color: #7a5aa3;
+  }
 }

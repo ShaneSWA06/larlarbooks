@@ -2,7 +2,8 @@ import { ChevronDown, BookOpen, Users, Award } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 
 const Hero = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
   const scrollToBooks = () => {
     const booksSection = document.getElementById("books-section");
     if (booksSection) {
@@ -19,83 +20,185 @@ const Hero = () => {
   };
 
   return (
-    <section className="bg-gradient-to-br from-blue-50 via-white to-blue-100 py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-gradient-to-br from-purple-900 via-violet-900 to-indigo-900 py-20 relative overflow-hidden">
+      {/* Floating background elements */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-purple-500/20 rounded-full blur-xl floating" />
+      <div
+        className="absolute top-40 right-20 w-32 h-32 bg-violet-500/20 rounded-full blur-xl floating"
+        style={{ animationDelay: "1s" }}
+      />
+      <div
+        className="absolute bottom-40 left-1/4 w-16 h-16 bg-indigo-500/20 rounded-full blur-xl floating"
+        style={{ animationDelay: "2s" }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Content */}
-        <div className="text-center space-y-12">
+        <div className="text-center space-y-12 text-white">
+          {/* Logo showcase */}
+          <div className="flex justify-center mb-8">
+            <div className="p-6 bg-white/10 backdrop-blur-lg rounded-full border border-white/20 floating">
+              <img
+                src="/logo.png"
+                alt="LarLarBooks Logo"
+                className="h-16 w-16 object-contain"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                }}
+              />
+              <BookOpen
+                className="h-16 w-16 text-purple-300 hidden"
+                style={{ display: "none" }}
+              />
+            </div>
+          </div>
+
           {/* Main Headline */}
-          <h1 className="hero-title text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
+          <h1
+            className={`hero-title font-bold text-white leading-tight ${
+              language === "MM"
+                ? "text-4xl lg:text-6xl myanmar-heading"
+                : "text-5xl lg:text-7xl"
+            }`}
+          >
             {t.heroTitle}
           </h1>
 
           {/* Subtitle */}
-          <p className="hero-subtitle text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p
+            className={`hero-subtitle text-purple-100 max-w-4xl mx-auto leading-relaxed ${
+              language === "MM"
+                ? "text-lg lg:text-xl myanmar-text"
+                : "text-xl lg:text-2xl"
+            }`}
+          >
             {t.heroSubtitle}
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
-            <button
-              onClick={scrollToBooks}
-              className="btn-text bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 shadow-lg"
-            >
-              {t.exploreLibrary}
-            </button>
-            <button
-              onClick={scrollToBooks}
-              className="btn-text border-2 border-gray-400 text-gray-700 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all flex items-center space-x-2"
-            >
-              <span>{t.howItWorks}</span>
+            <button onClick={scrollToBooks} className="apple-button group">
+              <span className={language === "MM" ? "myanmar-text" : ""}>
+                {t.exploreLibrary}
+              </span>
+              <svg
+                className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
             </button>
           </div>
         </div>
 
-        {/* Stats Section */}
+        {/* Enhanced Stats Section */}
         <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-          <div className="space-y-3">
+          <div className="space-y-4 group">
             <div className="flex items-center justify-center">
-              <BookOpen className="h-8 w-8 text-blue-600 mr-3" />
-              <span className="text-4xl font-bold text-gray-900">10K+</span>
+              <div className="p-3 bg-white/10 backdrop-blur-lg rounded-full mr-4 group-hover:scale-110 transition-transform">
+                <img
+                  src="/logo.png"
+                  alt="Books"
+                  className="h-8 w-8 object-contain"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
+                <BookOpen
+                  className="h-8 w-8 text-purple-300 hidden"
+                  style={{ display: "none" }}
+                />
+              </div>
+              <span className="text-4xl font-bold text-white">10K+</span>
             </div>
-            <p className="stats-text text-gray-600 font-medium">{t.ebooks}</p>
+            <p
+              className={`stats-text text-purple-200 font-medium ${
+                language === "MM" ? "myanmar-text" : ""
+              }`}
+            >
+              {t.ebooks}
+            </p>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-4 group">
             <div className="flex items-center justify-center">
-              <Users className="h-8 w-8 text-blue-600 mr-3" />
-              <span className="text-4xl font-bold text-gray-900">50K+</span>
+              <div className="p-3 bg-white/10 backdrop-blur-lg rounded-full mr-4 group-hover:scale-110 transition-transform">
+                <Users className="h-8 w-8 text-purple-300" />
+              </div>
+              <span className="text-4xl font-bold text-white">50K+</span>
             </div>
-            <p className="stats-text text-gray-600 font-medium">{t.learners}</p>
+            <p
+              className={`stats-text text-purple-200 font-medium ${
+                language === "MM" ? "myanmar-text" : ""
+              }`}
+            >
+              {t.learners}
+            </p>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-4 group">
             <div className="flex items-center justify-center">
-              <Award className="h-8 w-8 text-blue-600 mr-3" />
-              <span className="text-4xl font-bold text-gray-900">4.8★</span>
+              <div className="p-3 bg-white/10 backdrop-blur-lg rounded-full mr-4 group-hover:scale-110 transition-transform">
+                <Award className="h-8 w-8 text-purple-300" />
+              </div>
+              <span className="text-4xl font-bold text-white">4.8★</span>
             </div>
-            <p className="stats-text text-gray-600 font-medium">{t.rating}</p>
+            <p
+              className={`stats-text text-purple-200 font-medium ${
+                language === "MM" ? "myanmar-text" : ""
+              }`}
+            >
+              {t.rating}
+            </p>
           </div>
         </div>
 
         {/* Trusted By Section */}
         <div className="mt-16 text-center">
-          <p className="text-gray-500 font-medium text-sm uppercase tracking-wider mb-8">
+          <p
+            className={`text-purple-300 font-medium text-sm uppercase tracking-wider mb-8 ${
+              language === "MM" ? "myanmar-text" : ""
+            }`}
+          >
             TRUSTED BY LEARNERS WORLDWIDE
           </p>
-          {/* You can add partner logos here later */}
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Enhanced Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
         <button
           onClick={scrollToBooks}
-          className="animate-bounce bg-blue-600 bg-opacity-10 rounded-full p-3 hover:bg-opacity-20 transition-all focus:outline-none"
+          className="animate-bounce bg-white/10 backdrop-blur-lg rounded-full p-4 hover:bg-white/20 transition-all focus:outline-none border border-white/20"
           aria-label="Scroll to books section"
         >
-          <ChevronDown className="h-6 w-6 text-blue-600" />
+          <ChevronDown className="h-6 w-6 text-purple-300" />
         </button>
       </div>
+
+      {/* Add CSS for floating animation */}
+      <style>{`
+        .floating {
+          animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+      `}</style>
     </section>
   );
 };
