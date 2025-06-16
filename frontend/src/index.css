@@ -124,6 +124,29 @@
     border-bottom: 1px solid rgba(26, 26, 26, 0.1); /* Updated to use Black 1A1A1A */
   }
 
+  .logo-text-english {
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif !important;
+    font-weight: 700 !important;
+  }
+
+  .logo-text-myanmar {
+    font-family: "Noto Sans Myanmar", "Myanmar Khyay", "Pyidaungsu Font",
+      "Myanmar3", "Padauk", "Myanmar Text", sans-serif !important;
+    font-weight: 600 !important;
+  }
+
+  /* Override any Myanmar language styling for logo */
+  html.myanmar .logo-text-english {
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif !important;
+  }
+
+  html.myanmar .logo-text-myanmar {
+    font-family: "Noto Sans Myanmar", "Myanmar Khyay", "Pyidaungsu Font",
+      "Myanmar3", "Padauk", "Myanmar Text", sans-serif !important;
+  }
+
   /* Add padding to body to account for fixed header */
   body {
     position: relative;
@@ -209,14 +232,61 @@
   }
 
   /* Language Switcher Myanmar */
-  html.myanmar .language-switch-btn {
-    font-family: "Noto Sans Myanmar", "Myanmar Khyay", "Pyidaungsu Font",
-      "Myanmar3", "Padauk", "Myanmar Text", sans-serif;
+  /* Myanmar Language Switcher Alignment Fix - Corrected Values */
+  .myanmar-lang-switcher .myanmar-text-code {
+    transform: translateY(2px) !important; /* Move text DOWN instead of up */
+    line-height: 1 !important;
   }
 
-  html.myanmar .language-dropdown .language-option {
+  .myanmar-lang-switcher .myanmar-flag {
+    transform: translateY(0px) !important; /* Keep flag in original position */
+  }
+
+  /* Force the alignment with very high specificity - CORRECTED */
+  .language-switch-btn.myanmar-lang-switcher .myanmar-text-code {
+    transform: translateY(
+      2px
+    ) !important; /* Move text DOWN to center with flag */
+    position: relative !important;
+    top: 2px !important;
+  }
+
+  .language-switch-btn.myanmar-lang-switcher .myanmar-flag {
+    transform: translateY(0px) !important; /* Don't move flag */
+    position: relative !important;
+    top: 0px !important;
+  }
+
+  html.myanmar .language-switch-btn {
+    align-items: center !important;
+  }
+
+  html.myanmar .language-switch-btn span {
     font-family: "Noto Sans Myanmar", "Myanmar Khyay", "Pyidaungsu Font",
       "Myanmar3", "Padauk", "Myanmar Text", sans-serif;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 16px !important; /* Match flag height exactly */
+    font-size: 14px !important; /* Force specific font size */
+    transform: translateY(-3px) !important; /* Try even more offset */
+    vertical-align: top !important; /* Override any other alignment */
+  }
+
+  /* Force flag to also center properly */
+  html.myanmar .language-switch-btn svg {
+    vertical-align: top !important;
+    display: inline-block !important;
+    margin-top: 0 !important;
+  }
+
+  /* Fix flag and text container to use flexbox properly */
+  html.myanmar .language-switch-btn > div {
+    align-items: center !important;
+    display: inline-flex !important;
+    gap: 0.5rem !important;
+    height: 24px !important; /* Container height */
   }
 
   /* Enhanced text rendering for Myanmar */
@@ -273,9 +343,6 @@
   }
 
   /* Fix for Myanmar text in flex containers */
-  html.myanmar .flex-shrink-0 {
-    flex-shrink: 0;
-  }
 
   html.myanmar .min-w-0 {
     min-width: 0;

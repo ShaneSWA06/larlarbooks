@@ -36,22 +36,22 @@ const Header = () => {
           <div className="flex items-center space-x-3 flex-shrink-0">
             <div className="relative flex-shrink-0">
               <div className="bg-[#EEEEEE] dark:bg-[#231F20] rounded-xl p-2.5 shadow-lg border border-[#D9BBF9] dark:border-[#A56ABD] transition-colors duration-300">
-                <img
-                  src="/logo.png"
-                  alt="LarLarBooks Logo"
-                  className="h-7 w-7 object-contain"
-                />
+                <a href="/">
+                  <img
+                    src="/logo.png"
+                    alt="LarLarBooks Logo"
+                    className="h-8 w-8 object-contain"
+                  />
+                </a>
               </div>
               <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#A56ABD] rounded-full border-2 border-[#EEEEEE] animate-pulse"></div>
             </div>
-            <div className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[#7B5BA7] to-[#6E3482] bg-clip-text text-transparent">
+            <div className="flex flex-col -space-y-2">
+              <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[#7B5BA7] to-[#6E3482] bg-clip-text text-transparent logo-text-english">
                 LarLarBooks
               </span>
-              <span className="text-xs text-[#1A1A1A]/70 dark:text-[#EEEEEE]/70 -mt-1 transition-colors duration-300">
-                {language === "MM"
-                  ? "ပညာရေး စာကြည့်တိုက်"
-                  : "Educational Library"}
+              <span className="text-l sm:text-xl font-bold bg-gradient-to-r from-[#7B5BA7] to-[#6E3482] bg-clip-text text-transparent logo-text-myanmar">
+                လာလာစာပေ
               </span>
             </div>
           </div>

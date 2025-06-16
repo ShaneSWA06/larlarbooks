@@ -7,7 +7,7 @@ const LanguageSwitcher = () => {
   const { language, setLanguage, t } = useLanguage();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Flag components
+  // Flag components - Fixed React validation
   const FlagIcon = ({
     country,
     className = "w-5 h-4",
@@ -42,17 +42,17 @@ const LanguageSwitcher = () => {
                   d="m30.4 11 2.3 7.1h7.5l-6.1 4.4 2.3 7.1-6.1-4.4-6.1 4.4 2.3-7.1-6.1-4.4h7.5z"
                 />
               </g>
-              <use href="#us-star" transform="translate(60.8 0)" />
-              <use href="#us-star" transform="translate(121.6 0)" />
-              <use href="#us-star" transform="translate(182.4 0)" />
-              <use href="#us-star" transform="translate(243.2 0)" />
-              <use href="#us-star" transform="translate(304 0)" />
-              <use href="#us-star" transform="translate(30.4 25.8)" />
-              <use href="#us-star" transform="translate(91.2 25.8)" />
-              <use href="#us-star" transform="translate(152 25.8)" />
-              <use href="#us-star" transform="translate(212.8 25.8)" />
-              <use href="#us-star" transform="translate(273.6 25.8)" />
-              <use href="#us-star" transform="translate(334.4 25.8)" />
+              <use xlinkHref="#us-star" transform="translate(60.8 0)" />
+              <use xlinkHref="#us-star" transform="translate(121.6 0)" />
+              <use xlinkHref="#us-star" transform="translate(182.4 0)" />
+              <use xlinkHref="#us-star" transform="translate(243.2 0)" />
+              <use xlinkHref="#us-star" transform="translate(304 0)" />
+              <use xlinkHref="#us-star" transform="translate(30.4 25.8)" />
+              <use xlinkHref="#us-star" transform="translate(91.2 25.8)" />
+              <use xlinkHref="#us-star" transform="translate(152 25.8)" />
+              <use xlinkHref="#us-star" transform="translate(212.8 25.8)" />
+              <use xlinkHref="#us-star" transform="translate(273.6 25.8)" />
+              <use xlinkHref="#us-star" transform="translate(334.4 25.8)" />
             </g>
           </g>
         </svg>
@@ -79,7 +79,7 @@ const LanguageSwitcher = () => {
     return flags[country as keyof typeof flags] || null;
   };
 
-  // Language options with proper labels and flag components
+  // Language options
   const languageOptions = [
     {
       code: "EN" as Language,
@@ -120,7 +120,6 @@ const LanguageSwitcher = () => {
     setLanguage(newLanguage);
     setIsOpen(false);
 
-    // Force CSS class application
     setTimeout(() => {
       const htmlElement = document.documentElement;
       if (newLanguage === "MM") {
@@ -135,28 +134,41 @@ const LanguageSwitcher = () => {
 
   return (
     <div className="relative" ref={dropdownRef}>
-      {/* Enhanced Language Switcher Button with Dark Mode */}
+      {/* Language Switcher Button - SUPER SIMPLE with CSS classes only */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="language-switch-btn group flex items-center space-x-2 px-3 py-2 bg-[#EEEEEE] dark:bg-[#231F20] border border-[#D9BBF9] dark:border-[#6E3482] rounded-xl hover:border-[#7B5BA7] dark:hover:border-[#A56ABD] hover:bg-[#D9BBF9] dark:hover:bg-[#6E3482] hover:shadow-md transition-all duration-200 min-w-max focus:outline-none focus:ring-2 focus:ring-[#7B5BA7] focus:ring-opacity-20"
+        className={`language-switch-btn group inline-flex items-center space-x-2 px-3 py-2 bg-[#EEEEEE] dark:bg-[#231F20] border border-[#D9BBF9] dark:border-[#6E3482] rounded-xl hover:border-[#7B5BA7] dark:hover:border-[#A56ABD] hover:bg-[#D9BBF9] dark:hover:bg-[#6E3482] hover:shadow-md transition-all duration-200 min-w-max focus:outline-none focus:ring-2 focus:ring-[#7B5BA7] focus:ring-opacity-20 ${
+          language === "MM" ? "myanmar-lang-switcher" : ""
+        }`}
         aria-label="Switch language"
         aria-expanded={isOpen}
       >
-        <Globe className="h-4 w-4 text-[#1A1A1A] dark:text-[#EEEEEE] group-hover:text-[#7B5BA7] dark:group-hover:text-[#A56ABD] transition-colors" />
-        <div className="flex items-center space-x-2">
-          <div className="flex-shrink-0">{currentLanguage.flagComponent}</div>
-          <span className="text-sm font-medium text-[#1A1A1A] dark:text-[#EEEEEE] group-hover:text-[#7B5BA7] dark:group-hover:text-[#A56ABD] transition-colors">
-            {currentLanguage.code}
-          </span>
-        </div>
+        <Globe className="h-4 w-4 text-[#1A1A1A] dark:text-[#EEEEEE] group-hover:text-[#7B5BA7] dark:group-hover:text-[#A56ABD] transition-colors flex-shrink-0" />
+
+        <span
+          className={`flag-container ${
+            language === "MM" ? "myanmar-flag" : ""
+          }`}
+        >
+          {currentLanguage.flagComponent}
+        </span>
+
+        <span
+          className={`text-sm font-medium text-[#1A1A1A] dark:text-[#EEEEEE] group-hover:text-[#7B5BA7] dark:group-hover:text-[#A56ABD] transition-colors whitespace-nowrap ${
+            language === "MM" ? "myanmar-text-code" : ""
+          }`}
+        >
+          {currentLanguage.code}
+        </span>
+
         <ChevronDown
-          className={`h-4 w-4 text-[#1A1A1A] dark:text-[#EEEEEE] group-hover:text-[#7B5BA7] dark:group-hover:text-[#A56ABD] transition-all duration-200 ${
+          className={`h-4 w-4 text-[#1A1A1A] dark:text-[#EEEEEE] group-hover:text-[#7B5BA7] dark:group-hover:text-[#A56ABD] transition-all duration-200 flex-shrink-0 ${
             isOpen ? "rotate-180" : ""
           }`}
         />
       </button>
 
-      {/* Enhanced Dropdown Menu with Dark Mode */}
+      {/* Dropdown - KEEP ORIGINAL STRUCTURE */}
       {isOpen && (
         <div className="language-dropdown absolute top-full right-0 mt-2 w-52 bg-[#EEEEEE] dark:bg-[#231F20] border border-[#D9BBF9] dark:border-[#6E3482] rounded-xl shadow-xl z-50 overflow-hidden backdrop-blur-sm">
           <div className="py-1">
@@ -167,19 +179,22 @@ const LanguageSwitcher = () => {
               <button
                 key={option.code}
                 onClick={() => handleLanguageChange(option.code)}
-                className={`language-option w-full flex items-center justify-between px-4 py-3 hover:bg-[#D9BBF9] dark:hover:bg-[#6E3482] transition-all duration-150 group ${
+                className={`language-option w-full inline-flex items-center justify-between px-4 py-3 hover:bg-[#D9BBF9] dark:hover:bg-[#6E3482] transition-all duration-150 group ${
                   language === option.code
                     ? "bg-[#D9BBF9] dark:bg-[#6E3482] text-[#7B5BA7] dark:text-[#EEEEEE] border-r-4 border-[#7B5BA7] dark:border-[#A56ABD]"
                     : "text-[#1A1A1A] dark:text-[#EEEEEE] hover:text-[#7B5BA7] dark:hover:text-[#A56ABD]"
                 }`}
               >
-                <div className="flex items-center space-x-3">
-                  <div className="flex-shrink-0">{option.flagComponent}</div>
-                  <div className="flex flex-col items-start">
-                    <span className="font-medium text-sm leading-tight">
+                {/* ORIGINAL dropdown structure - NO changes */}
+                <div className="inline-flex items-center space-x-3 flex-1">
+                  <div className="flex-shrink-0 inline-flex items-center justify-center">
+                    {option.flagComponent}
+                  </div>
+                  <div className="inline-flex flex-col items-start min-w-0">
+                    <span className="font-medium text-sm leading-tight whitespace-nowrap">
                       {option.label}
                     </span>
-                    <span className="text-xs text-[#1A1A1A]/50 dark:text-[#EEEEEE]/50 group-hover:text-[#7B5BA7]/70 dark:group-hover:text-[#A56ABD]/70">
+                    <span className="text-xs text-[#1A1A1A]/50 dark:text-[#EEEEEE]/50 group-hover:text-[#7B5BA7]/70 dark:group-hover:text-[#A56ABD]/70 whitespace-nowrap">
                       {option.nativeName}
                     </span>
                   </div>
