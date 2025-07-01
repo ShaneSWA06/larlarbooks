@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.e49d1f2e.css",
-    "main.js": "/static/js/main.d6e4459b.js",
-    "static/js/453.8ab44547.chunk.js": "/static/js/453.8ab44547.chunk.js",
-    "index.html": "/index.html",
-    "main.e49d1f2e.css.map": "/static/css/main.e49d1f2e.css.map",
-    "main.d6e4459b.js.map": "/static/js/main.d6e4459b.js.map",
-    "453.8ab44547.chunk.js.map": "/static/js/453.8ab44547.chunk.js.map"
+    "main.css": "/larlarbooks/static/css/main.e49d1f2e.css",
+    "main.js": "/larlarbooks/static/js/main.75ddddd9.js",
+    "static/js/453.73f432eb.chunk.js": "/larlarbooks/static/js/453.73f432eb.chunk.js",
+    "index.html": "/larlarbooks/index.html",
+    "main.e49d1f2e.css.map": "/larlarbooks/static/css/main.e49d1f2e.css.map",
+    "main.75ddddd9.js.map": "/larlarbooks/static/js/main.75ddddd9.js.map",
+    "453.73f432eb.chunk.js.map": "/larlarbooks/static/js/453.73f432eb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e49d1f2e.css",
-    "static/js/main.d6e4459b.js"
+    "static/js/main.75ddddd9.js"
   ]
 }
