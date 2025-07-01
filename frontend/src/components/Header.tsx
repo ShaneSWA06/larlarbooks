@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-[#EEEEEE]/80 dark:bg-[#1A1A1A]/80 backdrop-blur-md border-b border-[#D9BBF9]/50 dark:border-[#231F20]/50 z-[100] shadow-sm transition-colors duration-300">
-      <div className="w-[70%] max-w-none px-4 sm:px-6 lg:px-8 mx-auto">
+      <div className="w-full max-w-[500px] md:max-w-none md:w-[70%] px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="flex justify-between items-center h-20 gap-4">
           {/* Logo */}
           <div className="flex items-center space-x-3 flex-shrink-0">
