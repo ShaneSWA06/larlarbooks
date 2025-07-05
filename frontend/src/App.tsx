@@ -1,4 +1,4 @@
-// Test workflow trigger
+// Test workflow triggers
 import { HashRouter, Routes, Route } from "react-router-dom";
 
 // Simple test components
