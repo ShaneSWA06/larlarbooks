@@ -38,7 +38,7 @@ const Header = () => {
               <div className="bg-[#EEEEEE] dark:bg-[#231F20] rounded-xl p-2.5 shadow-lg border border-[#D9BBF9] dark:border-[#A56ABD] transition-colors duration-300">
                 <a href="/">
                   <img
-                    src="/logo.png"
+                    src="C:\Users\shane\OneDrive\Documents\larlarbooks\larlarbooks\frontend\build\logo.png"
                     alt="LarLarBooks Logo"
                     className="h-8 w-8 object-contain"
                   />

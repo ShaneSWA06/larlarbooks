@@ -1,35 +1,33 @@
-import { Toaster } from "./components/ui/toaster";
-import { Toaster as Sonner } from "./components/ui/sonner";
-import { TooltipProvider } from "./components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter, Routes, Route } from "react-router-dom";
-import { LanguageProvider } from "./components/LanguageContext";
-import { ThemeProvider } from "./components/ThemeContext";
-import Index from "./pages/Index";
-import About from "./pages/About";
-import NotFound from "./pages/NotFound";
 
-const queryClient = new QueryClient();
+// Simple test components
+const Home = () => (
+  <div>
+    <h1>HOME PAGE WORKS!</h1>
+    <a href="/#/about">Go to About</a>
+  </div>
+);
+const About = () => (
+  <div>
+    <h1>ABOUT PAGE WORKS!</h1>
+    <a href="/#/">Go to Home</a>
+  </div>
+);
+const NotFound = () => (
+  <div>
+    <h1>404 - NOT FOUND</h1>
+    <a href="/#/">Go to Home</a>
+  </div>
+);
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
-      <LanguageProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <HashRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/about" element={<About />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </HashRouter>
-        </TooltipProvider>
-      </LanguageProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
+  <HashRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </HashRouter>
 );
 
 export default App;
